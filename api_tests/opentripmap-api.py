@@ -17,11 +17,13 @@ response_dict = json.loads(response.text)
 print(response_dict)
 
 radius = 3000
+limit = 500  # this is maximum
 url = f"https://api.opentripmap.com/0.1/en/places/radius?radius={str(radius)}" \
-      f"&lon={response_dict['lon']}&lat={response_dict['lat']}&format=json&limit=1000&apikey={opentripmap_key}"
+      f"&lon={response_dict['lon']}&lat={response_dict['lat']}&format=json&limit={limit}&apikey={opentripmap_key}"
 
 places_response = requests.get(url, headers=headers)
 places_dict = json.loads(places_response.text)
+print("Found places: ", len(places_dict))
 print(places_dict[0])
 
 

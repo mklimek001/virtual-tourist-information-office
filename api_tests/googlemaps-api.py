@@ -14,7 +14,7 @@ language = "pl-PL"
 region = "PL"
 radius = 1000
 
-'''cracow_places = gmaps.places(
+cracow_places = gmaps.places(
             'museum',
             location=location,
             radius=radius,
@@ -42,7 +42,7 @@ json_formatted_places_nearby = json.dumps(cracow_places_nearby, indent=2, ensure
 #print(json_formatted_places_nearby)
 for place in cracow_places_nearby["results"]:
     print(place["name"], " ---> ", place["place_id"])
-'''
+
 
 single_place_details = gmaps.place(
             "ChIJ3Q97Bw5bFkcRjr9Px9GS8L8",
